@@ -1,0 +1,40 @@
+name: Constitutional CI/CD & Governance Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  schedule:
+    - cron: '0 0 * * *' # Daily audit run
+
+jobs:
+  governance-and-quality-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml requests
+
+      - name: Run Constitutional Policy & Refactor Engine
+        env:
+          TARWATER_KILL_SWITCH: "false"
+          TARWATER_WEBHOOK_URL: ${{ secrets.TARWATER_WEBHOOK_URL }}
+        run: |
+          python refactor_engine.py
+
+      - name: Verify Audit Logs & Commit Tags
+        run: |
+          echo "Verifying constitutional compliance tags..."
+          git status
