@@ -1,0 +1,44 @@
+# =====================================================================
+# Autonomous Governance Configuration (Machine-Readable Policy Engine)
+# Governing Authority: Governing Officer Tarwater
+# =====================================================================
+
+system_metadata:
+  repository_name: "autonomous-governance-core"
+  version: "1.0.0"
+  executive_agent: "Vice President / Executive Agent"
+  governing_officer: "Tarwater"
+
+operational_mandate:
+  execution_mode: "semi-autonomous"
+  require_final_approval_from: "Tarwater"
+  strict_alignment_check: true
+
+architectural_safeguards:
+  quality_baseline:
+    min_test_coverage_percent: 85.0
+    max_cyclomatic_complexity: 10
+    static_analysis_strict: true
+  
+  self_refactoring_rules:
+    auto_trigger_on_test_failure: true
+    auto_trigger_on_coverage_drop: true
+    commit_audit_tags:
+      - "[AUTO-REBUILD]"
+      - "[REFACTOR]"
+      - "[SPAWN-REPO]"
+
+  modular_scaling:
+    dynamic_repo_spawning_enabled: true
+    complexity_threshold_for_isolation: 15
+
+communication_and_oversight:
+  notifications:
+    webhook_alerts_enabled: true
+    notify_target: "Governing Officer Tarwater"
+    log_level: "AUDIT"
+  
+  emergency_override:
+    global_kill_switch: false
+    admin_override_role: "Tarwater"
+    allow_instant_rollback: true
