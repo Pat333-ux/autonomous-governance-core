@@ -1,0 +1,32 @@
+# Autonomous-Governance-Core
+
+**Governing Authority:** Governing Officer Tarwater  
+**System Role:** Vice President / Executive Agent  
+
+## Overview
+`autonomous-governance-core` is the central controller repository and constitutional policy engine for our autonomous multi-agent ecosystem. It enforces strict CI/CD quality baselines, automated test-driven refactoring loops, dynamic sub-repository scaling, real-time webhook audit notifications, and absolute executive override controls.
+
+## Repository Structure
+
+* `CONSTITUTION.md` — The foundational charter and governance rules governing all operations.
+* `governance_config.yaml` — Machine-readable policy engine containing thresholds for test coverage, complexity, and override flags.
+* `refactor_engine.py` — Core automation script evaluating CI/CD telemetry, triggering refactoring pull requests, and managing modular repo isolation.
+* `.github/workflows/constitutional_ci.yml` — Automated GitHub Actions CI/CD pipeline enforcing continuous code quality and running the refactor engine.
+* `override_control.py` — Executive administrative interface allowing Governing Officer Tarwater to engage global kill switches, roll back commits, or amend thresholds.
+* `requirements.txt` — Python dependency manifest.
+
+## Executive Override & Administration
+Governing Officer Tarwater retains absolute override authority via `override_control.py`:
+
+```bash
+# Halt/Engage Global Kill Switch
+python override_control.py halt
+
+# Resume Operations
+python override_control.py resume
+
+# Rollback to Specific Commit
+python override_control.py rollback <commit_hash>
+
+# Amend Constitutional Thresholds
+python override_control.py amend architectural_safeguards quality_baseline max_cyclomatic_complexity 12
